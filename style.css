@@ -8,15 +8,15 @@
 }
 
 /* =========================
-   BODY – GOLD VOID
+   BODY – EMERALD VOID
 ========================= */
 body {
   font-family: 'Russo One', sans-serif;
   background:
-    radial-gradient(circle at 20% 15%, rgba(255,200,90,0.18), transparent 40%),
-    radial-gradient(circle at 80% 85%, rgba(255,160,40,0.15), transparent 45%),
-    linear-gradient(180deg, #0b0600, #030200);
-  color: #fff3d6;
+    radial-gradient(circle at 20% 15%, rgba(0,255,170,0.18), transparent 40%),
+    radial-gradient(circle at 80% 85%, rgba(0,200,140,0.15), transparent 45%),
+    linear-gradient(180deg, #020a06, #010302);
+  color: #eafff6;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -30,8 +30,8 @@ body {
   background:
     repeating-linear-gradient(
       120deg,
-      rgba(255,200,90,0.05) 0,
-      rgba(255,200,90,0.05) 1px,
+      rgba(0,255,170,0.06) 0,
+      rgba(0,255,170,0.06) 1px,
       transparent 1px,
       transparent 70px
     );
@@ -75,21 +75,21 @@ body {
 }
 
 /* =========================
-   CORE BOX – GOLD
+   CORE BOX – EMERALD
 ========================= */
 .content-box {
   position: relative;
   background: linear-gradient(
     180deg,
-    rgba(28,18,6,0.96),
-    rgba(10,6,2,0.96)
+    rgba(6,26,18,0.96),
+    rgba(2,10,6,0.96)
   );
   border-radius: 22px;
   padding: 28px;
   text-align: center;
   box-shadow:
-    0 0 0 1px rgba(255,200,90,0.35),
-    0 0 55px rgba(255,170,60,0.35);
+    0 0 0 1px rgba(0,255,170,0.35),
+    0 0 55px rgba(0,220,150,0.35);
 }
 
 .content-box::before {
@@ -97,7 +97,7 @@ body {
   position: absolute;
   inset: -2px;
   border-radius: 24px;
-  background: linear-gradient(135deg, #ffd36a, #ff9f1c);
+  background: linear-gradient(135deg, #00ffb2, #00c896);
   opacity: 0.28;
   filter: blur(20px);
   z-index: -1;
@@ -109,7 +109,7 @@ body {
 .logo {
   width: 100%;
   margin-bottom: 22px;
-  filter: drop-shadow(0 0 35px #ffd36a);
+  filter: drop-shadow(0 0 35px #00ffb2);
 }
 
 /* =========================
@@ -120,21 +120,21 @@ input {
   padding: 15px;
   margin-top: 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255,200,90,0.45);
-  background: #120a02;
-  color: #fff1cc;
+  border: 1px solid rgba(0,255,170,0.45);
+  background: #03140d;
+  color: #eafff6;
   font-size: 16px;
   text-align: center;
   outline: none;
-  box-shadow: inset 0 0 18px rgba(255,170,60,0.25);
+  box-shadow: inset 0 0 18px rgba(0,220,150,0.25);
 }
 
 input::placeholder {
-  color: #d6b98a;
+  color: #9fe6c9;
 }
 
 /* =========================
-   BUTTON – GOLD CORE
+   BUTTON – EMERALD CORE
 ========================= */
 button {
   margin-top: 22px;
@@ -144,21 +144,21 @@ button {
   border: none;
   font-size: 15px;
   cursor: pointer;
-  background: linear-gradient(135deg, #ffd36a, #ff9f1c);
-  color: #1a1004;
+  background: linear-gradient(135deg, #00ffb2, #00c896);
+  color: #012018;
   text-transform: uppercase;
   letter-spacing: 1.4px;
   box-shadow:
-    0 0 30px rgba(255,200,90,0.9),
-    0 0 70px rgba(255,160,40,0.8);
+    0 0 30px rgba(0,255,170,0.9),
+    0 0 70px rgba(0,200,140,0.8);
   transition: all 0.25s ease;
 }
 
 button:hover {
   transform: scale(1.08);
   box-shadow:
-    0 0 50px rgba(255,200,90,1),
-    0 0 100px rgba(255,160,40,1);
+    0 0 50px rgba(0,255,170,1),
+    0 0 100px rgba(0,200,140,1);
 }
 
 /* =========================
@@ -167,8 +167,8 @@ button:hover {
 h2 {
   font-size: 22px;
   margin-bottom: 14px;
-  color: #fff4dc;
-  text-shadow: 0 0 25px rgba(255,200,90,1);
+  color: #eafff6;
+  text-shadow: 0 0 25px rgba(0,255,170,1);
 }
 
 p {
@@ -187,15 +187,15 @@ p {
 }
 
 /* =========================
-   CARD – GOLD GLASS
+   CARD – EMERALD GLASS
 ========================= */
 .card {
   position: relative;
   border-radius: 16px;
   padding: 6px;
   cursor: pointer;
-  background: linear-gradient(160deg, #140b02, #070400);
-  box-shadow: 0 0 22px rgba(255,200,90,0.55);
+  background: linear-gradient(160deg, #041a11, #010704);
+  box-shadow: 0 0 22px rgba(0,255,170,0.55);
   transition: all 0.3s ease;
 }
 
@@ -207,7 +207,7 @@ p {
   background: linear-gradient(
     120deg,
     transparent 30%,
-    rgba(255,180,60,0.45),
+    rgba(0,255,170,0.45),
     transparent 70%
   );
   opacity: 0;
@@ -221,7 +221,7 @@ p {
 
 .card:hover {
   transform: translateY(-8px) scale(1.08);
-  box-shadow: 0 0 55px rgba(255,180,60,1);
+  box-shadow: 0 0 55px rgba(0,255,170,1);
 }
 
 .card:hover::after {
@@ -229,8 +229,8 @@ p {
 }
 
 .card.selected {
-  outline: 3px solid #ffd36a;
-  box-shadow: 0 0 80px rgba(255,200,90,1);
+  outline: 3px solid #00ffb2;
+  box-shadow: 0 0 80px rgba(0,255,170,1);
 }
 
 /* =========================
@@ -241,9 +241,9 @@ p {
   height: 72px;
   border-radius: 50%;
   border: 6px solid rgba(255,255,255,0.15);
-  border-top: 6px solid #ffd36a;
+  border-top: 6px solid #00ffb2;
   animation: spin 1s linear infinite;
-  box-shadow: 0 0 45px rgba(255,200,90,1);
+  box-shadow: 0 0 45px rgba(0,255,170,1);
   margin: 20px auto;
 }
 
