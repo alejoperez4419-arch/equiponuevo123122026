@@ -8,16 +8,17 @@
 }
 
 /* =========================
-   BODY – CYBER GALAXY
+   BODY – BLACK GOLD LUXURY
 ========================= */
 body {
   font-family: 'Russo One', sans-serif;
-  background:
-    radial-gradient(circle at 20% 15%, rgba(120,0,255,0.18), transparent 40%),
-    radial-gradient(circle at 80% 85%, rgba(0,180,255,0.15), transparent 45%),
-    linear-gradient(180deg, #070014, #020005);
 
-  color: #f3eaff;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255,190,60,0.18), transparent 40%),
+    radial-gradient(circle at 80% 85%, rgba(255,140,0,0.15), transparent 45%),
+    linear-gradient(180deg, #0a0a0a, #000000);
+
+  color: #fff4d6;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -31,8 +32,8 @@ body {
   background:
     repeating-linear-gradient(
       120deg,
-      rgba(140,0,255,0.06) 0,
-      rgba(140,0,255,0.06) 1px,
+      rgba(255,190,60,0.06) 0,
+      rgba(255,190,60,0.06) 1px,
       transparent 1px,
       transparent 70px
     );
@@ -76,22 +77,22 @@ body {
 }
 
 /* =========================
-   CORE BOX – PURPLE GLASS
+   CORE BOX – GOLD GLASS
 ========================= */
 .content-box {
   position: relative;
   background: linear-gradient(
     180deg,
-    rgba(18,6,35,0.96),
-    rgba(6,2,18,0.96)
+    rgba(20,20,20,0.96),
+    rgba(8,8,8,0.96)
   );
   border-radius: 22px;
   padding: 28px;
   text-align: center;
 
   box-shadow:
-    0 0 0 1px rgba(140,0,255,0.35),
-    0 0 55px rgba(90,0,255,0.35);
+    0 0 0 1px rgba(255,190,60,0.35),
+    0 0 55px rgba(255,170,40,0.25);
 }
 
 .content-box::before {
@@ -99,8 +100,8 @@ body {
   position: absolute;
   inset: -2px;
   border-radius: 24px;
-  background: linear-gradient(135deg, #a200ff, #00c8ff);
-  opacity: 0.28;
+  background: linear-gradient(135deg, #ffcc70, #ff8c00);
+  opacity: 0.25;
   filter: blur(20px);
   z-index: -1;
 }
@@ -111,7 +112,7 @@ body {
 .logo {
   width: 100%;
   margin-bottom: 22px;
-  filter: drop-shadow(0 0 35px #a200ff);
+  filter: drop-shadow(0 0 35px #ffb84d);
 }
 
 /* =========================
@@ -122,21 +123,22 @@ input {
   padding: 15px;
   margin-top: 12px;
   border-radius: 14px;
-  border: 1px solid rgba(140,0,255,0.45);
-  background: #0b0520;
-  color: #f3eaff;
+  border: 1px solid rgba(255,190,60,0.4);
+  background: #111111;
+  color: #fff4d6;
   font-size: 16px;
   text-align: center;
   outline: none;
-  box-shadow: inset 0 0 18px rgba(120,0,255,0.25);
+
+  box-shadow: inset 0 0 18px rgba(255,170,40,0.15);
 }
 
 input::placeholder {
-  color: #caa6ff;
+  color: #e8c98a;
 }
 
 /* =========================
-   BUTTON – NEON GRADIENT
+   BUTTON – GOLD GRADIENT
 ========================= */
 button {
   margin-top: 22px;
@@ -147,15 +149,15 @@ button {
   font-size: 15px;
   cursor: pointer;
 
-  background: linear-gradient(135deg, #a200ff, #00c8ff);
-  color: #0b0016;
+  background: linear-gradient(135deg, #ffd27a, #ff8c00);
+  color: #1a0f00;
 
   text-transform: uppercase;
   letter-spacing: 1.4px;
 
   box-shadow:
-    0 0 30px rgba(160,0,255,0.9),
-    0 0 70px rgba(0,200,255,0.8);
+    0 0 30px rgba(255,180,60,0.9),
+    0 0 70px rgba(255,140,0,0.7);
 
   transition: all 0.25s ease;
 }
@@ -163,8 +165,8 @@ button {
 button:hover {
   transform: scale(1.08);
   box-shadow:
-    0 0 50px rgba(160,0,255,1),
-    0 0 100px rgba(0,200,255,1);
+    0 0 55px rgba(255,200,80,1),
+    0 0 110px rgba(255,140,0,1);
 }
 
 /* =========================
@@ -173,8 +175,8 @@ button:hover {
 h2 {
   font-size: 22px;
   margin-bottom: 14px;
-  color: #f3eaff;
-  text-shadow: 0 0 25px rgba(160,0,255,1);
+  color: #ffe9b3;
+  text-shadow: 0 0 25px rgba(255,180,60,0.9);
 }
 
 p {
@@ -193,7 +195,7 @@ p {
 }
 
 /* =========================
-   CARD – CYBER GLASS
+   CARD – GOLD GLASS
 ========================= */
 .card {
   position: relative;
@@ -201,9 +203,9 @@ p {
   padding: 6px;
   cursor: pointer;
 
-  background: linear-gradient(160deg, #12032a, #05010f);
+  background: linear-gradient(160deg, #1a1a1a, #080808);
 
-  box-shadow: 0 0 22px rgba(140,0,255,0.55);
+  box-shadow: 0 0 22px rgba(255,170,40,0.4);
   transition: all 0.3s ease;
 }
 
@@ -215,7 +217,7 @@ p {
   background: linear-gradient(
     120deg,
     transparent 30%,
-    rgba(160,0,255,0.45),
+    rgba(255,200,90,0.45),
     transparent 70%
   );
   opacity: 0;
@@ -229,7 +231,7 @@ p {
 
 .card:hover {
   transform: translateY(-8px) scale(1.08);
-  box-shadow: 0 0 55px rgba(160,0,255,1);
+  box-shadow: 0 0 55px rgba(255,190,60,0.9);
 }
 
 .card:hover::after {
@@ -237,8 +239,8 @@ p {
 }
 
 .card.selected {
-  outline: 3px solid #a200ff;
-  box-shadow: 0 0 80px rgba(160,0,255,1);
+  outline: 3px solid #ffb84d;
+  box-shadow: 0 0 80px rgba(255,180,60,1);
 }
 
 /* =========================
@@ -249,11 +251,11 @@ p {
   height: 72px;
   border-radius: 50%;
   border: 6px solid rgba(255,255,255,0.15);
-  border-top: 6px solid #a200ff;
+  border-top: 6px solid #ffb84d;
 
   animation: spin 1s linear infinite;
 
-  box-shadow: 0 0 45px rgba(160,0,255,1);
+  box-shadow: 0 0 45px rgba(255,180,60,1);
   margin: 20px auto;
 }
 
