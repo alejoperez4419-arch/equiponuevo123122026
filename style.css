@@ -8,23 +8,23 @@
 }
 
 /* =========================
-   BODY – LAVA INFERNO GAMER
+   BODY – CYBER NEON ENERGY
 ========================= */
 body {
   font-family: 'Russo One', sans-serif;
 
   background:
-    radial-gradient(circle at 15% 10%, rgba(255,60,0,0.18), transparent 40%),
-    radial-gradient(circle at 85% 90%, rgba(255,140,0,0.16), transparent 45%),
-    linear-gradient(180deg, #0b0505, #030101);
+    radial-gradient(circle at 15% 10%, rgba(0,255,255,0.18), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(120,0,255,0.16), transparent 45%),
+    linear-gradient(180deg, #050510, #020208);
 
-  color: #ffe9e4;
+  color: #eafcff;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 /* =========================
-   BACKGROUND GRID (FIRE)
+   BACKGROUND GRID (TECH)
 ========================= */
 .background-overlay {
   position: fixed;
@@ -33,8 +33,8 @@ body {
   background:
     repeating-linear-gradient(
       120deg,
-      rgba(255,80,0,0.07) 0,
-      rgba(255,80,0,0.07) 1px,
+      rgba(0,255,255,0.07) 0,
+      rgba(0,255,255,0.07) 1px,
       transparent 1px,
       transparent 70px
     );
@@ -79,15 +79,15 @@ body {
 }
 
 /* =========================
-   CORE BOX – LAVA GLASS
+   CORE BOX – GLASS NEON
 ========================= */
 .content-box {
   position: relative;
 
   background: linear-gradient(
     180deg,
-    rgba(25, 10, 8, 0.96),
-    rgba(10, 3, 3, 0.96)
+    rgba(12, 12, 25, 0.96),
+    rgba(6, 6, 14, 0.96)
   );
 
   border-radius: 22px;
@@ -95,8 +95,8 @@ body {
   text-align: center;
 
   box-shadow:
-    0 0 0 1px rgba(255,90,0,0.4),
-    0 0 70px rgba(255,50,0,0.35);
+    0 0 0 1px rgba(0,255,255,0.35),
+    0 0 70px rgba(120,0,255,0.35);
 }
 
 .content-box::before {
@@ -105,9 +105,9 @@ body {
   inset: -2px;
   border-radius: 24px;
 
-  background: linear-gradient(135deg, #ff2a00, #ff9500);
+  background: linear-gradient(135deg, #00f7ff, #7a00ff);
 
-  opacity: 0.3;
+  opacity: 0.35;
   filter: blur(24px);
   z-index: -1;
 }
@@ -118,7 +118,7 @@ body {
 .logo {
   width: 100%;
   margin-bottom: 22px;
-  filter: drop-shadow(0 0 40px #ff3c00);
+  filter: drop-shadow(0 0 40px #00f7ff);
 }
 
 /* =========================
@@ -130,24 +130,24 @@ input {
   margin-top: 12px;
 
   border-radius: 14px;
-  border: 1px solid rgba(255,100,0,0.5);
+  border: 1px solid rgba(0,255,255,0.4);
 
-  background: #140707;
-  color: #ffe9e4;
+  background: #0a0a18;
+  color: #eafcff;
 
   font-size: 16px;
   text-align: center;
   outline: none;
 
-  box-shadow: inset 0 0 18px rgba(255,80,0,0.2);
+  box-shadow: inset 0 0 18px rgba(0,255,255,0.2);
 }
 
 input::placeholder {
-  color: #ffb199;
+  color: #9cecff;
 }
 
 /* =========================
-   BUTTON – FIRE GRADIENT
+   BUTTON – NEON GRADIENT
 ========================= */
 button {
   margin-top: 22px;
@@ -159,15 +159,15 @@ button {
   font-size: 15px;
   cursor: pointer;
 
-  background: linear-gradient(135deg, #ff2a00, #ff9500);
-  color: #120000;
+  background: linear-gradient(135deg, #00f7ff, #7a00ff);
+  color: #050510;
 
   text-transform: uppercase;
   letter-spacing: 1.4px;
 
   box-shadow:
-    0 0 35px rgba(255,60,0,0.9),
-    0 0 80px rgba(255,140,0,0.7);
+    0 0 35px rgba(0,255,255,0.9),
+    0 0 80px rgba(120,0,255,0.7);
 
   transition: all 0.25s ease;
 }
@@ -176,8 +176,8 @@ button:hover {
   transform: scale(1.08);
 
   box-shadow:
-    0 0 65px rgba(255,60,0,1),
-    0 0 140px rgba(255,140,0,1);
+    0 0 65px rgba(0,255,255,1),
+    0 0 140px rgba(120,0,255,1);
 }
 
 /* =========================
@@ -187,8 +187,8 @@ h2 {
   font-size: 22px;
   margin-bottom: 14px;
 
-  color: #ffd2c6;
-  text-shadow: 0 0 28px rgba(255,70,0,1);
+  color: #bffcff;
+  text-shadow: 0 0 28px rgba(0,255,255,1);
 }
 
 p {
@@ -207,7 +207,7 @@ p {
 }
 
 /* =========================
-   CARD – VOLCANIC GLASS
+   CARD – CYBER GLASS
 ========================= */
 .card {
   position: relative;
@@ -215,9 +215,9 @@ p {
   padding: 6px;
   cursor: pointer;
 
-  background: linear-gradient(160deg, #1a0b0b, #070202);
+  background: linear-gradient(160deg, #0f0f20, #050510);
 
-  box-shadow: 0 0 25px rgba(255,60,0,0.5);
+  box-shadow: 0 0 25px rgba(0,255,255,0.4);
   transition: all 0.3s ease;
 }
 
@@ -230,7 +230,7 @@ p {
   background: linear-gradient(
     120deg,
     transparent 30%,
-    rgba(255,150,0,0.6),
+    rgba(120,0,255,0.6),
     transparent 70%
   );
 
@@ -245,7 +245,7 @@ p {
 
 .card:hover {
   transform: translateY(-8px) scale(1.08);
-  box-shadow: 0 0 65px rgba(255,70,0,1);
+  box-shadow: 0 0 65px rgba(0,255,255,1);
 }
 
 .card:hover::after {
@@ -253,24 +253,24 @@ p {
 }
 
 .card.selected {
-  outline: 3px solid #ff3c00;
-  box-shadow: 0 0 90px rgba(255,70,0,1);
+  outline: 3px solid #00f7ff;
+  box-shadow: 0 0 90px rgba(0,255,255,1);
 }
 
 /* =========================
-   SPINNER – FIRE
+   SPINNER – NEON
 ========================= */
 .spinner {
   width: 72px;
   height: 72px;
   border-radius: 50%;
 
-  border: 6px solid rgba(255,255,255,0.15);
-  border-top: 6px solid #ff3c00;
+  border: 6px solid rgba(255,255,255,0.12);
+  border-top: 6px solid #00f7ff;
 
   animation: spin 1s linear infinite;
 
-  box-shadow: 0 0 45px rgba(255,60,0,1);
+  box-shadow: 0 0 45px rgba(0,255,255,1);
   margin: 20px auto;
 }
 
