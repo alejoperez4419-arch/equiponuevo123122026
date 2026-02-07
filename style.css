@@ -8,17 +8,18 @@
 }
 
 /* =========================
-   BODY – CYBER NEON ENERGY
+   BODY – SOLAR FLARE ENERGY
 ========================= */
 body {
   font-family: 'Russo One', sans-serif;
 
+  /* Nueva paleta: Negros profundos con resplandores ambarinos y rojos */
   background:
-    radial-gradient(circle at 15% 10%, rgba(0,255,255,0.18), transparent 40%),
-    radial-gradient(circle at 85% 90%, rgba(120,0,255,0.16), transparent 45%),
-    linear-gradient(180deg, #050510, #020208);
+    radial-gradient(circle at 15% 10%, rgba(255, 166, 0, 0.15), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(255, 60, 0, 0.12), transparent 45%),
+    linear-gradient(180deg, #0a0805, #000000);
 
-  color: #eafcff;
+  color: #fff4e0;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -33,14 +34,14 @@ body {
   background:
     repeating-linear-gradient(
       120deg,
-      rgba(0,255,255,0.07) 0,
-      rgba(0,255,255,0.07) 1px,
+      rgba(255, 191, 0, 0.05) 0,
+      rgba(255, 191, 0, 0.05) 1px,
       transparent 1px,
       transparent 70px
     );
 
   z-index: -1;
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 /* =========================
@@ -60,7 +61,7 @@ body {
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  animation: enter 0.6s ease;
+  animation: enter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section.active {
@@ -70,33 +71,34 @@ body {
 @keyframes enter {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(40px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 /* =========================
-   CORE BOX – GLASS NEON
+   CORE BOX – LUXURY GLASS
 ========================= */
 .content-box {
   position: relative;
 
   background: linear-gradient(
     180deg,
-    rgba(12, 12, 25, 0.96),
-    rgba(6, 6, 14, 0.96)
+    rgba(20, 15, 10, 0.98),
+    rgba(10, 5, 0, 0.98)
   );
 
   border-radius: 22px;
   padding: 28px;
   text-align: center;
 
+  /* Brillo perimetral en Oro/Naranja */
   box-shadow:
-    0 0 0 1px rgba(0,255,255,0.35),
-    0 0 70px rgba(120,0,255,0.35);
+    0 0 0 1px rgba(255, 191, 0, 0.25),
+    0 0 60px rgba(255, 60, 0, 0.2);
 }
 
 .content-box::before {
@@ -105,9 +107,10 @@ body {
   inset: -2px;
   border-radius: 24px;
 
-  background: linear-gradient(135deg, #00f7ff, #7a00ff);
+  /* Gradiente de fuego */
+  background: linear-gradient(135deg, #ffcc00, #ff4000);
 
-  opacity: 0.35;
+  opacity: 0.25;
   filter: blur(24px);
   z-index: -1;
 }
@@ -118,7 +121,7 @@ body {
 .logo {
   width: 100%;
   margin-bottom: 22px;
-  filter: drop-shadow(0 0 40px #00f7ff);
+  filter: drop-shadow(0 0 30px #ffaa00);
 }
 
 /* =========================
@@ -130,24 +133,29 @@ input {
   margin-top: 12px;
 
   border-radius: 14px;
-  border: 1px solid rgba(0,255,255,0.4);
+  border: 1px solid rgba(255, 191, 0, 0.3);
 
-  background: #0a0a18;
-  color: #eafcff;
+  background: #14110d;
+  color: #ffedcc;
 
   font-size: 16px;
   text-align: center;
   outline: none;
 
-  box-shadow: inset 0 0 18px rgba(0,255,255,0.2);
+  box-shadow: inset 0 0 15px rgba(255, 145, 0, 0.1);
+  transition: border 0.3s ease;
+}
+
+input:focus {
+    border: 1px solid rgba(255, 191, 0, 0.8);
 }
 
 input::placeholder {
-  color: #9cecff;
+  color: #7a6a4d;
 }
 
 /* =========================
-   BUTTON – NEON GRADIENT
+   BUTTON – AMBER GRADIENT
 ========================= */
 button {
   margin-top: 22px;
@@ -159,25 +167,27 @@ button {
   font-size: 15px;
   cursor: pointer;
 
-  background: linear-gradient(135deg, #00f7ff, #7a00ff);
-  color: #050510;
+  /* Oro a Naranja Quemado */
+  background: linear-gradient(135deg, #ffbf00, #ff5e00);
+  color: #1a0f00;
+  font-weight: bold;
 
   text-transform: uppercase;
   letter-spacing: 1.4px;
 
   box-shadow:
-    0 0 35px rgba(0,255,255,0.9),
-    0 0 80px rgba(120,0,255,0.7);
+    0 0 25px rgba(255, 166, 0, 0.5),
+    0 0 50px rgba(255, 60, 0, 0.3);
 
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  transform: scale(1.08);
-
+  transform: scale(1.05);
+  filter: brightness(1.1);
   box-shadow:
-    0 0 65px rgba(0,255,255,1),
-    0 0 140px rgba(120,0,255,1);
+    0 0 45px rgba(255, 166, 0, 0.7),
+    0 0 90px rgba(255, 60, 0, 0.5);
 }
 
 /* =========================
@@ -187,12 +197,13 @@ h2 {
   font-size: 22px;
   margin-bottom: 14px;
 
-  color: #bffcff;
-  text-shadow: 0 0 28px rgba(0,255,255,1);
+  color: #ffdb99;
+  text-shadow: 0 0 20px rgba(255, 166, 0, 0.6);
 }
 
 p {
   font-size: 14px;
+  color: #d1c1a3;
   opacity: 0.9;
 }
 
@@ -207,7 +218,7 @@ p {
 }
 
 /* =========================
-   CARD – CYBER GLASS
+   CARD – VOLCANIC GLASS
 ========================= */
 .card {
   position: relative;
@@ -215,9 +226,9 @@ p {
   padding: 6px;
   cursor: pointer;
 
-  background: linear-gradient(160deg, #0f0f20, #050510);
+  background: linear-gradient(160deg, #1f1a12, #0a0805);
 
-  box-shadow: 0 0 25px rgba(0,255,255,0.4);
+  box-shadow: 0 0 15px rgba(255, 145, 0, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -230,7 +241,7 @@ p {
   background: linear-gradient(
     120deg,
     transparent 30%,
-    rgba(120,0,255,0.6),
+    rgba(255, 94, 0, 0.4),
     transparent 70%
   );
 
@@ -241,11 +252,12 @@ p {
 .card img {
   width: 100%;
   border-radius: 12px;
+  filter: sepia(0.3) contrast(1.1);
 }
 
 .card:hover {
   transform: translateY(-8px) scale(1.08);
-  box-shadow: 0 0 65px rgba(0,255,255,1);
+  box-shadow: 0 0 40px rgba(255, 166, 0, 0.6);
 }
 
 .card:hover::after {
@@ -253,24 +265,24 @@ p {
 }
 
 .card.selected {
-  outline: 3px solid #00f7ff;
-  box-shadow: 0 0 90px rgba(0,255,255,1);
+  outline: 3px solid #ffbf00;
+  box-shadow: 0 0 60px rgba(255, 191, 0, 0.8);
 }
 
 /* =========================
-   SPINNER – NEON
+   SPINNER – SOLAR
 ========================= */
 .spinner {
   width: 72px;
   height: 72px;
   border-radius: 50%;
 
-  border: 6px solid rgba(255,255,255,0.12);
-  border-top: 6px solid #00f7ff;
+  border: 6px solid rgba(255, 255, 255, 0.05);
+  border-top: 6px solid #ffbf00;
 
   animation: spin 1s linear infinite;
 
-  box-shadow: 0 0 45px rgba(0,255,255,1);
+  box-shadow: 0 0 35px rgba(255, 145, 0, 0.6);
   margin: 20px auto;
 }
 
@@ -282,7 +294,7 @@ p {
    FINAL POP
 ========================= */
 #finalCards .card {
-  animation: pop 0.45s ease;
+  animation: pop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @keyframes pop {
