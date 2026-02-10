@@ -1,32 +1,38 @@
 /* =========================
    RESET
 ========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 /* =========================
-   BODY – SOLAR FLARE ENERGY
+   BODY – CYBER NEON ENERGY
 ========================= */
+
 body {
   font-family: 'Russo One', sans-serif;
 
-  /* Nueva paleta: Negros profundos con resplandores ambarinos y rojos */
+  /* Fondo gamer azul + morado */
   background:
-    radial-gradient(circle at 15% 10%, rgba(255, 166, 0, 0.15), transparent 40%),
-    radial-gradient(circle at 85% 90%, rgba(255, 60, 0, 0.12), transparent 45%),
-    linear-gradient(180deg, #0a0805, #000000);
+    radial-gradient(circle at 20% 10%, rgba(0, 255, 255, 0.12), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(140, 0, 255, 0.15), transparent 45%),
+    linear-gradient(180deg, #05070f, #000000);
 
-  color: #fff4e0;
+  color: #eafcff;
+
   min-height: 100vh;
   overflow-x: hidden;
 }
 
+
 /* =========================
    BACKGROUND GRID (TECH)
 ========================= */
+
 .background-overlay {
   position: fixed;
   inset: 0;
@@ -34,28 +40,32 @@ body {
   background:
     repeating-linear-gradient(
       120deg,
-      rgba(255, 191, 0, 0.05) 0,
-      rgba(255, 191, 0, 0.05) 1px,
+      rgba(0, 255, 255, 0.05) 0,
+      rgba(0, 255, 255, 0.05) 1px,
       transparent 1px,
       transparent 70px
     );
 
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.35;
 }
+
 
 /* =========================
    CONTAINER
 ========================= */
+
 .container {
   max-width: 420px;
   margin: auto;
   padding: 24px;
 }
 
+
 /* =========================
    SECTIONS
 ========================= */
+
 .section {
   display: none;
   min-height: 100vh;
@@ -79,26 +89,27 @@ body {
   }
 }
 
+
 /* =========================
-   CORE BOX – LUXURY GLASS
+   CORE BOX – CYBER GLASS
 ========================= */
+
 .content-box {
   position: relative;
 
   background: linear-gradient(
     180deg,
-    rgba(20, 15, 10, 0.98),
-    rgba(10, 5, 0, 0.98)
+    rgba(15, 20, 35, 0.97),
+    rgba(5, 8, 18, 0.97)
   );
 
   border-radius: 22px;
   padding: 28px;
   text-align: center;
 
-  /* Brillo perimetral en Oro/Naranja */
   box-shadow:
-    0 0 0 1px rgba(255, 191, 0, 0.25),
-    0 0 60px rgba(255, 60, 0, 0.2);
+    0 0 0 1px rgba(0, 255, 255, 0.25),
+    0 0 60px rgba(140, 0, 255, 0.25);
 }
 
 .content-box::before {
@@ -107,56 +118,62 @@ body {
   inset: -2px;
   border-radius: 24px;
 
-  /* Gradiente de fuego */
-  background: linear-gradient(135deg, #ffcc00, #ff4000);
+  background: linear-gradient(135deg, #00ffff, #8c00ff);
 
   opacity: 0.25;
-  filter: blur(24px);
+  filter: blur(25px);
   z-index: -1;
 }
+
 
 /* =========================
    LOGO
 ========================= */
+
 .logo {
   width: 100%;
   margin-bottom: 22px;
-  filter: drop-shadow(0 0 30px #ffaa00);
+  filter: drop-shadow(0 0 30px #00ffff);
 }
+
 
 /* =========================
    INPUT
 ========================= */
+
 input {
   width: 100%;
   padding: 15px;
   margin-top: 12px;
 
   border-radius: 14px;
-  border: 1px solid rgba(255, 191, 0, 0.3);
+  border: 1px solid rgba(0, 255, 255, 0.35);
 
-  background: #14110d;
-  color: #ffedcc;
+  background: #0f1425;
+  color: #cfffff;
 
   font-size: 16px;
   text-align: center;
   outline: none;
 
-  box-shadow: inset 0 0 15px rgba(255, 145, 0, 0.1);
-  transition: border 0.3s ease;
+  box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.12);
+  transition: 0.3s;
 }
 
 input:focus {
-    border: 1px solid rgba(255, 191, 0, 0.8);
+  border: 1px solid rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.5);
 }
 
 input::placeholder {
-  color: #7a6a4d;
+  color: #6d7b9b;
 }
 
+
 /* =========================
-   BUTTON – AMBER GRADIENT
+   BUTTON – NEON GRADIENT
 ========================= */
+
 button {
   margin-top: 22px;
   width: 100%;
@@ -167,49 +184,53 @@ button {
   font-size: 15px;
   cursor: pointer;
 
-  /* Oro a Naranja Quemado */
-  background: linear-gradient(135deg, #ffbf00, #ff5e00);
-  color: #1a0f00;
+  background: linear-gradient(135deg, #00ffff, #8c00ff);
+  color: #05070f;
   font-weight: bold;
 
   text-transform: uppercase;
   letter-spacing: 1.4px;
 
   box-shadow:
-    0 0 25px rgba(255, 166, 0, 0.5),
-    0 0 50px rgba(255, 60, 0, 0.3);
+    0 0 25px rgba(0, 255, 255, 0.6),
+    0 0 60px rgba(140, 0, 255, 0.4);
 
   transition: all 0.3s ease;
 }
 
 button:hover {
   transform: scale(1.05);
-  filter: brightness(1.1);
+  filter: brightness(1.15);
+
   box-shadow:
-    0 0 45px rgba(255, 166, 0, 0.7),
-    0 0 90px rgba(255, 60, 0, 0.5);
+    0 0 50px rgba(0, 255, 255, 0.9),
+    0 0 100px rgba(140, 0, 255, 0.7);
 }
+
 
 /* =========================
    TITLES
 ========================= */
+
 h2 {
   font-size: 22px;
   margin-bottom: 14px;
 
-  color: #ffdb99;
-  text-shadow: 0 0 20px rgba(255, 166, 0, 0.6);
+  color: #7df9ff;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
 }
 
 p {
   font-size: 14px;
-  color: #d1c1a3;
+  color: #b9d6ff;
   opacity: 0.9;
 }
+
 
 /* =========================
    CARDS GRID
 ========================= */
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -217,18 +238,20 @@ p {
   margin-top: 22px;
 }
 
+
 /* =========================
-   CARD – VOLCANIC GLASS
+   CARD – CYBER PANEL
 ========================= */
+
 .card {
   position: relative;
   border-radius: 16px;
   padding: 6px;
   cursor: pointer;
 
-  background: linear-gradient(160deg, #1f1a12, #0a0805);
+  background: linear-gradient(160deg, #141a30, #0b0f1f);
 
-  box-shadow: 0 0 15px rgba(255, 145, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -241,7 +264,7 @@ p {
   background: linear-gradient(
     120deg,
     transparent 30%,
-    rgba(255, 94, 0, 0.4),
+    rgba(0, 255, 255, 0.5),
     transparent 70%
   );
 
@@ -252,12 +275,12 @@ p {
 .card img {
   width: 100%;
   border-radius: 12px;
-  filter: sepia(0.3) contrast(1.1);
+  filter: contrast(1.1) saturate(1.15);
 }
 
 .card:hover {
   transform: translateY(-8px) scale(1.08);
-  box-shadow: 0 0 40px rgba(255, 166, 0, 0.6);
+  box-shadow: 0 0 45px rgba(0, 255, 255, 0.8);
 }
 
 .card:hover::after {
@@ -265,24 +288,26 @@ p {
 }
 
 .card.selected {
-  outline: 3px solid #ffbf00;
-  box-shadow: 0 0 60px rgba(255, 191, 0, 0.8);
+  outline: 3px solid #00ffff;
+  box-shadow: 0 0 70px rgba(0, 255, 255, 1);
 }
 
+
 /* =========================
-   SPINNER – SOLAR
+   SPINNER – NEON
 ========================= */
+
 .spinner {
   width: 72px;
   height: 72px;
   border-radius: 50%;
 
   border: 6px solid rgba(255, 255, 255, 0.05);
-  border-top: 6px solid #ffbf00;
+  border-top: 6px solid #00ffff;
 
   animation: spin 1s linear infinite;
 
-  box-shadow: 0 0 35px rgba(255, 145, 0, 0.6);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
   margin: 20px auto;
 }
 
@@ -290,9 +315,11 @@ p {
   to { transform: rotate(360deg); }
 }
 
+
 /* =========================
    FINAL POP
 ========================= */
+
 #finalCards .card {
   animation: pop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -308,9 +335,11 @@ p {
   }
 }
 
+
 /* =========================
    RESPONSIVE
 ========================= */
+
 @media (max-width: 360px) {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
