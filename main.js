@@ -21,7 +21,7 @@ function goToCards() {
     // ✨ Últimas 3 cartas: FC Point → Coin → Gem
     const specialCards = [
         { img: "coin.png", amount: 100000, label: "Coins" },
-        { img: "gp.png", amount: 100000, label: "GP" },
+        { img: "epoints.png", amount: 100000, label: "ePoints" },
 
     ];
 
