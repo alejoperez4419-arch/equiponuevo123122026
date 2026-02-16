@@ -1,7 +1,7 @@
 /* =========================
-   RESET & ASSETS
+   ROBOTIC CORE & ASSETS
    ========================= */
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Exo+2:wght@300;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500&display=swap');
 
 * {
     margin: 0;
@@ -10,238 +10,242 @@
 }
 
 :root {
-    --bright-cyan: #00ffff;
-    --bright-pink: #ff00ff;
-    --electric-blue: #0077ff;
-    --glow-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
-    --bg-dark: #050510;
+    --volt-blue: #00f2ff;
+    --crimson-edge: #ff003c;
+    --carbon-bg: #0a0a0c;
+    --panel-gray: #15161a;
+    --glass-border: rgba(0, 242, 255, 0.2);
+    --text-main: #e0e0e0;
 }
 
 /* =========================
-   BODY - EFECTO ENERGÉTICO
+   BODY - AMBIENTE INDUSTRIAL
    ========================= */
 body {
-    font-family: 'Exo 2', sans-serif;
-    background-color: var(--bg-dark);
-    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--carbon-bg);
+    color: var(--text-main);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-x: hidden;
-    /* Fondo con gradiente animado para dar vida */
-    background: radial-gradient(circle at center, #101035 0%, #050510 100%);
+    overflow: hidden;
+    /* Efecto de rejilla táctica de fondo */
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
 }
 
-/* Partículas brillantes de fondo */
-body::after {
+/* Overlay de ruido digital */
+body::before {
     content: "";
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-image: radial-gradient(var(--bright-cyan) 1px, transparent 1px);
-    background-size: 50px 50px;
-    opacity: 0.1;
-    z-index: -1;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 100;
 }
 
 /* =========================
-   SECCIONES Y ANIMACIONES
-   ========================= */
-
-.content-box img{
-    width: 100%;
-}
-
-.section {
-    display: none;
-    width: 100%;
-    justify-content: center;
-}
-
-.section.active {
-    display: flex;
-    animation: flashEnter 0.4s ease-out;
-}
-
-@keyframes flashEnter {
-    0% { opacity: 0; filter: brightness(3); transform: scale(0.9); }
-    100% { opacity: 1; filter: brightness(1); transform: scale(1); }
-}
-
-/* =========================
-   CONTENEDOR ULTRA-BRILLANTE
+   CHASSIS (CONTENEDOR)
    ========================= */
 .container {
     width: 100%;
-    max-width: 450px;
+    max-width: 440px;
     padding: 20px;
     z-index: 10;
 }
 
 .content-box {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--bright-cyan);
-    border-radius: 20px;
-    padding: 40px 25px;
-    text-align: center;
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 
-                inset 0 0 15px rgba(0, 255, 255, 0.2);
+    background: var(--panel-gray);
+    border: 1px solid var(--glass-border);
+    border-left: 5px solid var(--volt-blue);
+    padding: 45px 30px;
     position: relative;
-    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    /* Esquina cortada tipo hardware */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 92%, 92% 100%, 0% 100%);
+}
+.content-box img{
+    width: 100%;
 }
 
-/* Borde superior brillante */
-.content-box::before {
-    content: "";
+/* Marcador de estado superior */
+.content-box::after {
+    content: "PRTCL_ID: 99-X8";
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 4px;
-    background: linear-gradient(90deg, transparent, var(--bright-cyan), var(--bright-pink), transparent);
-    animation: flow 2s linear infinite;
-}
-
-@keyframes flow {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    top: 10px;
+    right: 25px;
+    font-size: 9px;
+    color: var(--volt-blue);
+    opacity: 0.5;
 }
 
 /* =========================
-   ELEMENTOS DE TEXTO
+   TEXTOS Y CABECERAS
    ========================= */
 h2 {
-    font-family: 'Syncopate', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1.6rem;
-    margin-bottom: 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
     color: #fff;
-    text-shadow: 0 0 10px var(--bright-cyan), 0 0 20px var(--bright-cyan);
-    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 10px;
 }
 
 p {
-    color: #00dfff;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8rem;
+    color: var(--volt-blue);
+    font-size: 0.7rem;
+    font-weight: bold;
     letter-spacing: 2px;
+    margin-bottom: 8px;
 }
 
 /* =========================
-   INPUTS ELÉCTRICOS
+   INTERFAZ DE ENTRADA (INPUTS)
    ========================= */
 input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid var(--electric-blue);
-    border-radius: 12px;
-    padding: 15px;
-    color: #fff;
-    font-family: 'Syncopate', sans-serif;
-    font-size: 14px;
-    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #2a2b30;
+    border-radius: 0; /* Robots no usan círculos */
+    padding: 18px;
+    color: var(--volt-blue);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    margin-bottom: 15px;
     outline: none;
-    transition: 0.3s;
-    text-align: center;
+    transition: 0.2s;
 }
 
 input:focus {
-    border-color: var(--bright-cyan);
-    box-shadow: 0 0 20px var(--bright-cyan);
-    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--volt-blue);
+    background: rgba(0, 242, 255, 0.05);
+    box-shadow: inset 0 0 10px rgba(0, 242, 255, 0.1);
 }
 
 /* =========================
-   BOTONES DE PODER
+   BOTONES DE EJECUCIÓN
    ========================= */
 button {
     all: unset;
     display: block;
     width: 100%;
-    padding: 20px 0;
-    margin-top: 15px;
+    padding: 18px 0;
+    margin-top: 20px;
     cursor: pointer;
     text-align: center;
-    font-family: 'Syncopate', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-weight: bold;
-    color: #000;
+    font-size: 12px;
+    color: #fff;
     text-transform: uppercase;
-    background: var(--bright-cyan);
-    border-radius: 50px;
-    box-shadow: 0 0 20px var(--bright-cyan);
+    background: var(--crimson-edge);
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
     transition: 0.3s;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 button:hover {
-    background: #fff;
-    box-shadow: 0 0 40px #fff;
-    transform: scale(1.03);
+    background: var(--volt-blue);
+    color: #000;
+    box-shadow: 0 0 25px var(--volt-blue);
+    transform: scale(1.02);
 }
 
 /* =========================
-   CARTAS Y GRID
+   GRID DE MÓDULOS (CARDS)
    ========================= */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 5px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .card img {
-    width: 100%;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+    width: 70%;
+    filter: grayscale(1) brightness(0.8);
+    transition: 0.3s;
 }
 
 .card:hover {
-    background: rgba(0, 255, 255, 0.1);
-    border-color: var(--bright-cyan);
+    border-color: var(--volt-blue);
+    background: rgba(0, 242, 255, 0.05);
 }
 
 .card.selected {
-    border-color: var(--bright-pink);
-    background: rgba(255, 0, 255, 0.1);
-    box-shadow: 0 0 15px var(--bright-pink);
-    transform: translateY(-5px);
+    border-color: var(--volt-blue);
+    background: rgba(0, 242, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
 }
 
 .card.selected div {
-    color: var(--bright-pink) !important;
+    color: var(--volt-blue) !important;
     font-weight: bold;
 }
 
+.card.selected img {
+    filter: grayscale(0) drop-shadow(0 0 5px var(--volt-blue));
+}
+
 /* =========================
-   SPINNER DE CARGA
+   CARGA DE SISTEMA (SPINNER)
    ========================= */
 .spinner {
-    width: 60px;
-    height: 60px;
-    margin: 20px auto;
-    border: 5px solid rgba(0, 255, 255, 0.1);
-    border-top: 5px solid var(--bright-cyan);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    filter: drop-shadow(0 0 10px var(--bright-cyan));
+    width: 40px;
+    height: 40px;
+    margin: 25px auto;
+    border: 3px solid rgba(0, 242, 255, 0.1);
+    border-top: 3px solid var(--volt-blue);
+    border-right: 3px solid var(--crimson-edge);
+    animation: spin 0.8s steps(8) infinite; /* Movimiento segmentado */
 }
 
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
 
-/* Ajustes Responsive */
-@media (max-width: 400px) {
+/* =========================
+   ANIMACIONES DE SECCIÓN
+   ========================= */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: systemBoot 0.4s ease-out;
+}
+
+@keyframes systemBoot {
+    0% { opacity: 0; transform: translateY(10px) scale(0.98); filter: brightness(2); }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: brightness(1); }
+}
+
+/* Responsive */
+@media (max-width: 420px) {
     .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .content-box { padding: 30px 20px; }
 }
