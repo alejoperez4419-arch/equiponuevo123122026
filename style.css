@@ -1,7 +1,7 @@
 /* =========================
-   BIOMECHANIC LIGHT CORE
+   NEO-GLASS LIGHT CORE
    ========================= */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Fira+Code:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500&display=swap');
 
 * {
     margin: 0;
@@ -10,20 +10,21 @@
 }
 
 :root {
-    --light-bg: #f6f3ff; /* Fondo claro suave */
-    --soft-white: rgba(255, 255, 255, 0.7);
-    --ancient-gold: #c6a34e;
-    --vital-emerald: #00c896;
-    --text-dark: #2a1f3f;
-    --mist-border: rgba(0, 0, 0, 0.08);
+    --neo-bg: #eef2f6; /* Fondo claro tecnológico */
+    --glass-panel: rgba(255, 255, 255, 0.6);
+    --neon-cyan: #00e5ff;
+    --neon-blue: #2979ff;
+    --text-dark: #0f172a;
+    --holo-border: rgba(0, 229, 255, 0.3);
+    --glow-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
 }
 
 /* =========================
-   BODY - AURA LUMINOSA
+   BODY - HOLOGRAMA SUAVE
    ========================= */
 body {
-    font-family: 'Fira Code', monospace;
-    background: var(--light-bg);
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--neo-bg);
     color: var(--text-dark);
     min-height: 100vh;
     display: flex;
@@ -32,20 +33,21 @@ body {
     overflow: hidden;
 
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(198, 163, 78, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(0, 200, 150, 0.1) 0%, transparent 50%);
+        linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, transparent 50%),
+        linear-gradient(-135deg, rgba(41, 121, 255, 0.05) 0%, transparent 50%);
 }
 
-/* Partículas suaves */
+/* Rejilla cibernética sutil */
 body::before {
     content: "";
     position: fixed;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(#000 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.03;
-    pointer-events: none;
+    background-image: 
+        linear-gradient(rgba(41, 121, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(41, 121, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: -1;
 }
 
 /* =========================
@@ -58,13 +60,27 @@ body::before {
 }
 
 .content-box {
-    background: var(--soft-white);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--mist-border);
-    border-radius: 30px;
+    background: var(--glass-panel);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--holo-border);
+    border-radius: 20px;
     padding: 45px 30px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05), inset 0 0 20px rgba(255, 255, 255, 0.5);
     position: relative;
+    overflow: hidden;
+}
+
+/* Reflejo superior del cristal */
+.content-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    opacity: 0.7;
 }
 
 .content-box img {
@@ -73,33 +89,49 @@ body::before {
 
 /* Marca inferior */
 .content-box::after {
-    content: "ANEURYSM_OS LIGHT";
+    content: "SYS.CORE // V.2.0";
     position: absolute;
     bottom: 10px;
-    left: 20px;
-    font-size: 8px;
-    color: var(--vital-emerald);
-    opacity: 0.5;
+    right: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    color: var(--neon-blue);
+    letter-spacing: 1px;
+    opacity: 0.6;
 }
 
 /* =========================
    TEXTOS
    ========================= */
 h2 {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.4rem;
-    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
     margin-bottom: 30px;
-    color: var(--ancient-gold);
+    color: var(--text-dark);
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+    border-bottom: 1px solid var(--holo-border);
     padding-bottom: 10px;
+    position: relative;
+}
+
+/* Acento en el título */
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 8px var(--neon-cyan);
 }
 
 p {
-    font-size: 0.75rem;
-    color: var(--text-dark);
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: #475569;
+    letter-spacing: 0.5px;
     margin-bottom: 8px;
 }
 
@@ -108,20 +140,22 @@ p {
    ========================= */
 input {
     width: 100%;
-    background: rgba(255,255,255,0.6);
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(41, 121, 255, 0.2);
+    border-radius: 8px;
     padding: 16px 20px;
     color: var(--text-dark);
     font-size: 13px;
     margin-bottom: 18px;
     outline: none;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
 }
 
 input:focus {
-    border-color: var(--vital-emerald);
-    box-shadow: 0 0 10px rgba(0,200,150,0.2);
+    border-color: var(--neon-cyan);
+    background: #fff;
+    box-shadow: var(--glow-shadow), inset 0 0 0 1px var(--neon-cyan);
 }
 
 /* =========================
@@ -135,21 +169,40 @@ button {
     margin-top: 20px;
     text-align: center;
     cursor: pointer;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
 
-    background: linear-gradient(135deg, var(--ancient-gold), #ffd86b);
-    color: #000;
-    border-radius: 25px;
-
-    transition: 0.3s;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));
+    color: #fff;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
 }
 
 button:hover {
-    background: linear-gradient(135deg, var(--vital-emerald), #00ffc3);
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5);
+}
+
+/* Brillo al pasar el cursor */
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
 }
 
 /* =========================
@@ -159,11 +212,11 @@ button:hover {
     width: 35px;
     height: 35px;
     margin: 25px auto;
-    border: 2px solid transparent;
-    border-top: 2px solid var(--ancient-gold);
-    border-right: 2px solid var(--vital-emerald);
+    border: 2px solid rgba(0, 229, 255, 0.1);
+    border-top: 2px solid var(--neon-cyan);
+    border-left: 2px solid var(--neon-blue);
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    animation: spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
 
 @keyframes spin {
@@ -181,34 +234,40 @@ button:hover {
 }
 
 .card {
-    background: rgba(255,255,255,0.5);
-    border: 1px solid rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(41, 121, 255, 0.1);
     border-radius: 12px;
-    padding: 12px 5px;
+    padding: 15px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    position: relative;
 }
 
 .card img {
     width: 100%;
-    filter: grayscale(0.5);
+    filter: grayscale(0.8) opacity(0.7);
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    border-color: var(--holo-border);
+    background: #fff;
+    box-shadow: var(--glow-shadow);
 }
 
 .card.selected {
-    border-color: var(--vital-emerald);
-    background: rgba(0,200,150,0.1);
+    border-color: var(--neon-cyan);
+    background: linear-gradient(180deg, #fff 0%, rgba(0, 229, 255, 0.1) 100%);
+    box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.1), 0 5px 15px rgba(0, 229, 255, 0.2);
 }
 
 .card.selected img {
     filter: none;
+    transform: scale(1.05);
 }
 
 /* =========================
@@ -220,12 +279,20 @@ button:hover {
 
 .section.active {
     display: block;
-    animation: fadeIn 0.5s ease;
+    animation: holoFadeIn 0.5s ease forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes holoFadeIn {
+    0% { 
+        opacity: 0; 
+        transform: translateY(15px) scale(0.98);
+        filter: blur(5px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
 }
 
 /* =========================
