@@ -31,7 +31,7 @@ function goToCards() {
 
         card.innerHTML = `
     <img src="${item.img}" alt="${item.label}">
-    <div style="color:black;font-size:18px;margin-top:6px;">
+    <div style="color:white;font-size:18px;margin-top:6px;">
       ${item.amount} ${item.label}
     </div>
   `;
@@ -95,7 +95,7 @@ function goToSearching() {
 
                 cardDiv.innerHTML = `
       <img src="${imgName}" alt="reward">
-      <div style="color:black;font-size:18px;margin-top:6px;">
+      <div style="color:white;font-size:18px;margin-top:6px;">
         ${amountText}
       </div>
     `;
@@ -152,3 +152,4 @@ if ("serviceWorker" in navigator) {
             });
     });
 }
+
