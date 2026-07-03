@@ -1,441 +1,563 @@
-/* =========================================================
-   FUTURE FOOTBALL GAMING UI
-   Responsive + Futurista + Efootball Style
-   ========================================================= */
+/* ==========================================
+   EFOOTBALL SECRET PACK 2026
+   PRO • FUTURISTIC • RESPONSIVE
+========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Orbitron:wght@400;600;700;800&display=swap');
+
+:root{
+
+    --bg:#020814;
+    --panel:rgba(8,18,35,.82);
+    --panel2:rgba(17,33,61,.9);
+
+    --blue:#00c8ff;
+    --blue2:#007dff;
+    --green:#9dff00;
+    --yellow:#ffd400;
+
+    --text:#ffffff;
+    --text2:#c6d5ea;
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow:
+    0 0 20px rgba(0,180,255,.25),
+    0 0 60px rgba(0,120,255,.18);
+
+    --radius:22px;
+
+}
+
+/* =========================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
-:root{
-    --primary:#00d9ff;
-    --secondary:#00ff99;
-    --gold:#ffd700;
-    --dark:#060b18;
-    --card:#0f1729;
-    --white:#ffffff;
-    --border:rgba(0,217,255,.3);
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Rajdhani',sans-serif;
+
+    font-family:'Orbitron',sans-serif;
+    color:var(--text);
+
     min-height:100vh;
     overflow-x:hidden;
+
     background:
-    radial-gradient(circle at top,#0b1735 0%,#050913 60%,#000 100%);
-    color:white;
-    position:relative;
+    linear-gradient(rgba(1,5,15,.82),rgba(1,5,15,.88)),
+    url("background.jpg") center center/cover no-repeat fixed;
+
 }
 
-/* =========================================================
-   FUTURISTIC FOOTBALL BACKGROUND
-   ========================================================= */
+/* =========================== */
 
 .background-overlay{
+
     position:fixed;
     inset:0;
-    z-index:-1;
+
     background:
-    linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.8)),
-    url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1920");
-    background-size:cover;
-    background-position:center;
-    filter:brightness(.45);
+    radial-gradient(circle at top,#00b7ff25 0%,transparent 45%),
+    radial-gradient(circle at bottom,#8fff0020 0%,transparent 40%),
+    linear-gradient(180deg,#01040d,#071321);
+
+    z-index:-2;
+
 }
 
-.background-overlay::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-    repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 80px,
-        rgba(0,217,255,.03) 81px
-    );
-}
-
-/* =========================================================
-   LAYOUT
-   ========================================================= */
+/* =========================== */
 
 .container{
+
     width:100%;
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:20px;
+
+    padding:30px;
+
 }
 
+/* =========================== */
+
 .section{
+
     display:none;
     width:100%;
-    max-width:1200px;
+    animation:fade .45s ease;
+
 }
 
 .section.active{
+
     display:flex;
     justify-content:center;
     align-items:center;
-    animation:fade .5s ease;
+
 }
 
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* =========================================================
-   GLASS PANEL
-   ========================================================= */
+/* =========================== */
 
 .content-box{
-    width:100%;
-    max-width:600px;
-    text-align:center;
 
-    background:rgba(10,15,30,.75);
+    width:100%;
+    max-width:470px;
+
+    background:var(--panel);
+
     backdrop-filter:blur(18px);
 
     border:1px solid var(--border);
 
-    border-radius:30px;
+    border-radius:var(--radius);
 
-    padding:40px;
+    box-shadow:var(--shadow);
 
-    box-shadow:
-    0 0 25px rgba(0,217,255,.2),
-    inset 0 0 20px rgba(0,217,255,.08);
+    padding:35px;
+
+    text-align:center;
+
 }
 
 .content-box.big{
-    max-width:1100px;
+
+    max-width:980px;
+
 }
+
+/* =========================== */
 
 .logo{
-    width:220px;
+
+    width:230px;
     max-width:90%;
-    margin-bottom:25px;
+
+    margin-bottom:28px;
+
     filter:
-    drop-shadow(0 0 10px var(--primary))
-    drop-shadow(0 0 30px var(--primary));
+    drop-shadow(0 0 14px #00b7ff);
+
 }
 
-/* =========================================================
-   TITLES
-   ========================================================= */
+/* =========================== */
 
 h2{
-    font-family:'Orbitron',sans-serif;
-    font-size:2rem;
-    margin-bottom:20px;
+
+    font-family:'Russo One',sans-serif;
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
     color:white;
-    text-transform:uppercase;
-    letter-spacing:2px;
 
     text-shadow:
-    0 0 10px var(--primary),
-    0 0 30px var(--primary);
+    0 0 10px #00bfff;
+
 }
 
 p{
-    font-size:1.2rem;
+
+    color:var(--text2);
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
 }
 
-/* =========================================================
-   INPUT
-   ========================================================= */
+/* =========================== */
 
 input{
+
     width:100%;
-    height:60px;
 
-    background:rgba(255,255,255,.06);
+    height:58px;
 
-    border:2px solid rgba(0,217,255,.4);
+    border-radius:16px;
 
-    border-radius:15px;
+    border:2px solid rgba(255,255,255,.08);
 
-    outline:none;
+    background:#08101d;
 
     color:white;
 
-    font-size:1.2rem;
+    font-size:18px;
 
-    padding:0 20px;
+    text-align:center;
 
-    margin-bottom:25px;
+    outline:none;
 
-    transition:.3s;
+    transition:.25s;
+
+    margin-bottom:22px;
+
 }
 
 input:focus{
-    border-color:var(--primary);
+
+    border-color:var(--blue);
 
     box-shadow:
-    0 0 20px rgba(0,217,255,.4);
+    0 0 20px rgba(0,183,255,.45);
+
 }
 
-input::placeholder{
-    color:#9db5d8;
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+/* =========================== */
 
 button{
+
+    width:100%;
+    height:58px;
+
     border:none;
+
+    border-radius:18px;
+
     cursor:pointer;
 
-    height:60px;
-    min-width:220px;
+    font-family:'Russo One';
 
-    padding:0 35px;
+    font-size:17px;
 
-    border-radius:14px;
-
-    font-size:1.1rem;
-    font-weight:700;
-
-    color:#000;
+    color:white;
 
     background:
-    linear-gradient(
-    135deg,
-    #ffe873,
-    #ffd700,
-    #ffbf00
-    );
+    linear-gradient(90deg,var(--blue2),var(--blue));
 
-    transition:.3s;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
+    transition:.25s;
 
     box-shadow:
-    0 0 20px rgba(255,215,0,.5);
+    0 10px 30px rgba(0,160,255,.35);
+
 }
 
 button:hover{
-    transform:translateY(-4px) scale(1.03);
+
+    transform:translateY(-3px);
 
     box-shadow:
-    0 0 35px rgba(255,215,0,.9);
+    0 0 25px rgba(0,183,255,.65);
+
 }
 
 button:active{
-    transform:scale(.97);
+
+    transform:scale(.98);
+
 }
 
-/* =========================================================
-   CARDS GRID
-   ========================================================= */
+/* =========================== */
 
 .cards-grid{
+
     display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 
-    gap:25px;
+    gap:22px;
 
     margin:30px 0;
+
 }
 
+/* =========================== */
+
 .card{
-    position:relative;
 
-    background:
-    linear-gradient(
-    180deg,
-    rgba(15,25,45,.9),
-    rgba(5,10,20,.95)
-    );
+    background:linear-gradient(180deg,#0d1b34,#09111f);
 
-    border:2px solid rgba(0,217,255,.15);
+    border:2px solid rgba(255,255,255,.05);
 
-    border-radius:22px;
+    border-radius:20px;
 
-    padding:18px;
+    padding:15px;
 
     cursor:pointer;
 
-    transition:.35s;
+    transition:.25s;
 
     overflow:hidden;
+
+    position:relative;
+
 }
 
 .card::before{
+
     content:"";
 
     position:absolute;
 
-    top:0;
-    left:-150%;
-
-    width:80%;
-    height:100%;
+    inset:0;
 
     background:
-    linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.18),
-    transparent
-    );
+    linear-gradient(130deg,transparent,rgba(255,255,255,.10),transparent);
 
-    transition:.7s;
+    transform:translateX(-130%);
+
+    transition:.6s;
+
 }
 
 .card:hover::before{
-    left:150%;
+
+    transform:translateX(130%);
+
 }
 
 .card:hover{
-    transform:
-    translateY(-10px)
-    scale(1.03);
 
-    border-color:var(--primary);
+    transform:translateY(-8px);
+
+    border-color:#00c8ff;
 
     box-shadow:
-    0 0 25px rgba(0,217,255,.4);
+    0 0 25px rgba(0,183,255,.45);
+
+}
+
+.card.selected{
+
+    border-color:var(--green);
+
+    box-shadow:
+    0 0 28px rgba(157,255,0,.55);
+
+    transform:scale(1.03);
+
 }
 
 .card img{
+
     width:100%;
-    max-height:250px;
-    object-fit:contain;
+
+    border-radius:14px;
+
+    display:block;
+
 }
 
-/* =========================================================
-   SELECTED CARD
-   ========================================================= */
-
-.card.selected{
-    border:2px solid var(--gold);
-
-    box-shadow:
-    0 0 20px rgba(255,215,0,.8),
-    0 0 50px rgba(255,215,0,.3);
-
-    transform:scale(1.05);
-}
-
-/* =========================================================
-   SPINNER
-   ========================================================= */
+/* =========================== */
 
 .spinner{
-    width:90px;
-    height:90px;
+
+    width:85px;
+    height:85px;
 
     margin:25px auto;
 
-    border:6px solid rgba(255,255,255,.15);
-
-    border-top:6px solid var(--primary);
-
     border-radius:50%;
 
-    animation:spin 1s linear infinite;
+    border:8px solid rgba(255,255,255,.12);
+
+    border-top:8px solid var(--yellow);
+
+    animation:spin .8s linear infinite;
 
     box-shadow:
-    0 0 25px rgba(0,217,255,.6);
+    0 0 25px rgba(255,210,0,.5);
+
 }
 
-@keyframes spin{
-    100%{
-        transform:rotate(360deg);
-    }
+/* =========================== */
+
+#searchingPlayer{
+
+    color:var(--green);
+
+    font-size:22px;
+
+    margin-top:10px;
+
 }
 
 #loadingText{
-    font-size:1.3rem;
-    font-weight:700;
-    letter-spacing:2px;
+
+    color:#fff;
+
+    font-size:18px;
+
 }
 
-/* =========================================================
-   PLAYER ID
-   ========================================================= */
+/* =========================== */
 
-#searchingPlayer{
-    margin-top:15px;
-    color:var(--secondary);
-    font-size:1.4rem;
-    font-weight:bold;
-}
+@keyframes spin{
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+    to{
 
-@media(max-width:768px){
+        transform:rotate(360deg);
 
-    .content-box{
-        padding:25px;
-        border-radius:20px;
     }
 
-    h2{
-        font-size:1.5rem;
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:none;
+
+    }
+
+}
+
+/* ===========================
+        TABLETS
+=========================== */
+
+@media (max-width:900px){
+
+    .content-box.big{
+
+        max-width:760px;
+
     }
 
     .cards-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-        gap:15px;
+
+        grid-template-columns:repeat(2,1fr);
+
     }
 
-    .card{
-        padding:10px;
+}
+
+/* ===========================
+        MOVIL
+=========================== */
+
+@media (max-width:600px){
+
+    .container{
+
+        padding:15px;
+
     }
 
-    button{
-        width:100%;
-        min-width:unset;
+    .content-box{
+
+        padding:22px;
+
+        border-radius:18px;
+
     }
 
     .logo{
+
         width:180px;
-    }
-}
 
-@media(max-width:480px){
-
-    .cards-grid{
-        grid-template-columns:
-        repeat(2,1fr);
     }
 
     h2{
-        font-size:1.2rem;
-    }
 
-    p{
-        font-size:1rem;
+        font-size:24px;
+
     }
 
     input{
-        height:55px;
+
+        height:54px;
+        font-size:16px;
+
     }
 
     button{
-        height:55px;
+
+        height:54px;
+        font-size:16px;
+
     }
+
+    .cards-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:14px;
+
+    }
+
+    .card{
+
+        padding:10px;
+
+        border-radius:16px;
+
+    }
+
+    .card img{
+
+        border-radius:10px;
+
+    }
+
+    .spinner{
+
+        width:70px;
+        height:70px;
+
+    }
+
+}
+
+/* ===========================
+     MOVILES PEQUEÑOS
+=========================== */
+
+@media (max-width:390px){
+
+    .cards-grid{
+
+        gap:10px;
+
+    }
+
+    .card{
+
+        padding:8px;
+
+    }
+
+    h2{
+
+        font-size:21px;
+
+    }
+
+}
+
+/* ===========================
+        DESKTOP XL
+=========================== */
+
+@media (min-width:1500px){
+
+    .content-box.big{
+
+        max-width:1200px;
+
+    }
+
+    .cards-grid{
+
+        grid-template-columns:repeat(4,1fr);
+
+    }
+
 }
